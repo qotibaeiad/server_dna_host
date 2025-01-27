@@ -1,0 +1,114 @@
+Blast4-request ::= {
+  body queue-search {
+    program "blastn",
+    service "megablast",
+    queries seq-loc-list {
+      whole genbank {
+        accession "MN908947",
+        version 3
+      }
+    },
+    subject database "nt_v5",
+    algorithm-options {
+      {
+        name "EvalueThreshold",
+        value cutoff e-value { 1, 10, 1 }
+      },
+      {
+        name "UngappedMode",
+        value boolean FALSE
+      },
+      {
+        name "PercentIdentity",
+        value real { 0, 10, 0 }
+      },
+      {
+        name "HitlistSize",
+        value integer 100
+      },
+      {
+        name "EffectiveSearchSpace",
+        value big-integer 0
+      },
+      {
+        name "DbLength",
+        value big-integer 0
+      },
+      {
+        name "WindowSize",
+        value integer 0
+      },
+      {
+        name "DustFiltering",
+        value boolean TRUE
+      },
+      {
+        name "RepeatFiltering",
+        value boolean FALSE
+      },
+      {
+        name "MaskAtHash",
+        value boolean TRUE
+      },
+      {
+        name "DustFilteringLevel",
+        value integer 20
+      },
+      {
+        name "DustFilteringWindow",
+        value integer 64
+      },
+      {
+        name "DustFilteringLinker",
+        value integer 1
+      },
+      {
+        name "GapXDropoff",
+        value real { 6, 10, 1 }
+      },
+      {
+        name "GapXDropoffFinal",
+        value real { 1, 10, 2 }
+      },
+      {
+        name "GapExtnAlgorithm",
+        value integer 1
+      },
+      {
+        name "MismatchPenalty",
+        value integer -2
+      },
+      {
+        name "MatchReward",
+        value integer 1
+      },
+      {
+        name "GapOpeningCost",
+        value integer 0
+      },
+      {
+        name "StrandOption",
+        value strand-type both-strands
+      },
+      {
+        name "WordSize",
+        value integer 28
+      }
+    },
+    format-options {
+      {
+        name "Web_JobTitle",
+        value string "MN908947:Severe acute respiratory syndrome..."
+      },
+      {
+        name "Web_NewWindow",
+        value boolean TRUE
+      },
+      {
+        name "Web_ShortQueryAdjust",
+        value boolean TRUE
+      }
+    }
+  }
+}
+
